@@ -7,8 +7,8 @@ const App = () => {
   const dispatch = useDispatch();
 
   return (
-    <div>
-      <h1>Counter: {counter}</h1>
+    <div className="App">
+      <h1>Counter : {counter}</h1>
       <h6>Tambah</h6>
       <button onClick={() => dispatch(increment())}>Increment</button>
       <h6>Kurang</h6>
