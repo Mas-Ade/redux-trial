@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { increment, decrement } from "./redux/action";
 
 const App = () => {
-  const counter = useSelector((state) => state);
+  const counter = useSelector((state) => state.numberOfStock);
   const dispatch = useDispatch();
 
   return (
