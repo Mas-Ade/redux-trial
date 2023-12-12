@@ -20,7 +20,6 @@ const TodoApp = () => {
     <div className="App">
       <h1>todo app</h1>
       <button onClick={addNewTodo}>add</button>
-
       {todos.map((todo, index) => (
         <div key={index}>
           <p>Item : {todo.title}</p>
