@@ -6,7 +6,7 @@ const initialState = {
   error: null,
 };
 
-const dataReducer = (state = initialState, action) => {
+const userReducer = (state = initialState, action) => {
   switch (action.type) {
     case "FETCH_DATA_REQUEST":
       return { ...state, loading: true };
@@ -20,7 +20,7 @@ const dataReducer = (state = initialState, action) => {
 };
 
 const rootReducer = combineReducers({
-  data: dataReducer,
+  data: userReducer,
   // Add other reducers here if needed
 });
 

@@ -1,7 +1,7 @@
 // Your React component
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { fetchData } from "../store/actions/ActionCreator";
+import { fetchData } from "../redux/username/usernameAction";
 
 // component start
 const Simple = ({ data, loading, error, fetchData }) => {

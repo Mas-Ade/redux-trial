@@ -1,8 +1,9 @@
 import axios from "axios";
-
-const FETCH_DATA_REQUEST = "FETCH_DATA_REQUEST";
-const FETCH_DATA_SUCCESS = "FETCH_DATA_SUCCESS";
-const FETCH_DATA_FAILURE = "FETCH_DATA_FAILURE";
+import {
+  FETCH_DATA_FAILURE,
+  FETCH_DATA_REQUEST,
+  FETCH_DATA_SUCCESS,
+} from "./usernameType";
 
 const fetchDataRequest = () => {
   return {
@@ -24,8 +25,11 @@ const fetchDataFailure = (error) => {
   };
 };
 
+// special action creator function
+// action yang return function bukan hanya type untuk switch reducer
 const fetchData = () => {
   return (dispatch) => {
+    // set loading data to
     dispatch(fetchDataRequest());
 
     // Simulate an asynchronous operation (e.g., API call)
@@ -34,7 +38,9 @@ const fetchData = () => {
       .then((response) => {
         // Dispatch a success action with the retrieved data
         const users = response.data.map((users) => users.name);
+        // const users = response.data.map((users) => users.name);
         dispatch(fetchDataSuccess(users));
+        console.log("fetch data");
       })
       .catch((error) => {
         // Dispatch a failure action with the error
@@ -44,3 +50,5 @@ const fetchData = () => {
 };
 
 export { fetchData };
+
+// .get("https://jsonplaceholder.typicode.com/users")
